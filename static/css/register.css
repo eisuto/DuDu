@@ -1,0 +1,220 @@
+/*导航栏样式*/
+body{
+    font-family: "BreeSerif","Source Han Sans CN","Source Serif"
+}
+@font-face{
+    font-family: BreeSerif;
+    src: url('../img/BreeSerif-Regular.ttf')
+        ,url('../img/BreeSerif-Regular.ttf'); /* IE9+ */
+}
+#logo{
+    color: #FF7C00;
+    font-weight: bolder;
+    font-size: 32px;
+    line-height: 14px;
+}
+.navbar {
+    margin-bottom: 0px; 
+}
+.form-group{
+    width: 400px;
+}
+.navbar-form .form-control{
+    width: 100%;
+}
+.up{
+    background-color: #FF7C00;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px; 
+}
+#d_color{
+    color: #FF7C00;
+    font-weight: bolder;
+}
+.game-icon{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background-image: url(../img/game.png);
+    background-position: center center;
+    background-size: 18px 18px;
+    vertical-align:middle;
+}
+.user-avatar{
+    width: 32px;
+    height: 32px;
+    margin-top: -6px;
+    margin-right: -10px;
+}
+/*用户信息*/
+#user-info{
+    display: none;
+}
+/*导航栏结束*/
+
+
+
+.main{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.left:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow:0 0 132px 95px #ffffff inset
+}
+
+/*表单组*/
+.right p{
+    font-size: 32px;
+    margin-left: 15px;
+}
+.right{
+    padding-top: 12%;
+    height: 360px;
+}
+.input-group{
+    height: 26px;
+    max-width: 452px;
+    width: 100%;
+    padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 22px;
+}
+
+.input-group-addon{
+    background-color: #449efc;
+    color: #fff;
+}
+.input-group-addon{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#q{
+    height: 45px;
+    font-size: 16px;
+}
+/*按钮*/
+.button-s{
+    max-width: 436px;
+    width: 96%;
+    height: auto;
+    
+}
+.right .btn-default{
+    width: 80px;
+    margin-left: 18px;
+    float: left;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s; 
+    -moz-transition:    all 0.5s; 
+    -ms-transition:     all 0.5s; 
+    -o-transition:      all 0.5s; 
+    transition:         all 0.5s; 
+}
+.register-bu{
+    background-color: #449efc;
+    color: #fff;
+}
+.register-bu:hover{
+    background-color: #fff;
+    color: #449efc;
+}
+/*边框*/
+
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+    }
+}
+.rainbow {
+
+    max-width: 452px;
+    height: 435px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 2rem;
+    margin-top: 8%;
+}
+.rainbow::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #449efc;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#449efc, #449efc), linear-gradient(#ff7c00, #ff7c00), linear-gradient(#ff7c00, #ff7c00), linear-gradient(#449efc, #449efc);
+    -webkit-animation: rotate 4s linear infinite;
+            animation: rotate 4s linear infinite;
+}
+.rainbow::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 5px;
+}
+#basic-addon1{
+    max-height: 45px;
+}
+/*邮箱注册样式*/
+
+.in-email{
+    width: 50%;
+    max-width: 226px;
+}
+#email-check{
+    width: 25%;
+    margin-left: 34px;
+    display: inline-block;
+    max-width: 190px;
+    font-size: 16px;
+    font-weight: bolder;
+    height: 43px;
+    color: #fff;
+    background-color: #449efc;
+    text-align: center;
+
+}
+
+.email-check #e-check-button:hover{
+    cursor: pointer;
+}
+#register-bu{
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 45px;
+    width: 394px;
+    font-size: 16px;
+}
+#err{
+    font-size: 14px;
+    color: #ff2121;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}

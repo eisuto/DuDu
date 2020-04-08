@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>DuDu-注册</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/register.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" id="logo" href="/index">DuDu</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a href="/index"><span class="glyphicon glyphicon-home"></span> 主站<span class="sr-only">(current)</span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="game-icon"></i> 游戏 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">占位1</a></li>
+                            <li><a href="#">占位2</a></li>
+                            <li><a href="#">占位3</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">占位4</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">占位5</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="/app"><span class="glyphicon glyphicon-phone"></span>APP</span></a></span></li>
+                    
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="搜索">
+                        </div>
+                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                    <li><a href="#" id="user-avater" class="navbar-brand"><img class="user-avatar" src="../static/img/default-avatar.png" alt=""></a></li>
+                    <li id="login-btt"><a href="/login">登录</a></li>
+                    <li class="dropdown">
+                        <a href="#" id="user-info" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/user_page">我的主页</a></li>
+                            <li><a href="/logout">退出</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="/register">注册</a></li>
+                    <li class="dropdown up">
+                        <a href="#"style="color: #fff"><span class="glyphicon glyphicon-facetime-video"></span>上传</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 left">
+                <img src="../static/img/register.jpg" class="img-responsive" alt="Responsive image">
+            </div>
+            <div class="col-xs-12 col-sm-6 right rainbow">
+                <p id="d_color_z" style="color: #449efc;">注册✿(oﾟ▽ﾟ)o  </p>
+                <div class="input-group">
+                    <span class="input-group-addon " id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text"  id="card" style="height: 45px;font-size: 16px;" class="form-control" placeholder="用户名" aria-describedby="basic-addon1">
+                    
+                </div><p class="ecard" id="err"><br></p>
+                <div class="input-group">
+                    <span class="input-group-addon " id="basic-addon1"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" id="pwd" style="height: 45px;font-size: 16px;" class="form-control" placeholder="密码" aria-describedby="basic-addon1">
+                </div><p class="epwd" id="err"><br></p>
+                <div class="input-group">
+                    <span class="input-group-addon " id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
+                    <input type="text"  id="in-email" style="height: 45px;font-size: 16px;" class="form-control" placeholder="邮箱" aria-describedby="basic-addon1">
+                </div><p class="eemail" id="err"><br></p>
+                <div class="input-group ">
+                    <span class="input-group-addon " id="basic-addon1"><span class="glyphicon glyphicon-pencil"></span></span>
+                    <input id="email-code" class="form-control in-email"  type="text" style="height: 45px;font-size: 16px;"  placeholder="邮箱验证码" aria-describedby="basic-addon1">
+                    <button type="button" onclick="emailTodoku()" id="email-check" class="btn btn-default">获取</button>
+                </div><p class="ecode" id="err"><br></p>
+                
+                <div class="button-s">
+                    <button id="register-bu" onclick="checkInput()" type="button" class="btn btn-default register-bu">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="https://www.layuicdn.com/layer-v3.1.1/layer.js"></script>
+    <script src="../static/js/register.js"></script>
+</body>
+</html>
