@@ -1,0 +1,2 @@
+# DuDu
+Beego+gorm的动漫视频弹幕网站
