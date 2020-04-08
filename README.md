@@ -1,2 +1,2 @@
 # DuDu
-Beego+gorm的动漫视频弹幕网站
+Beego+gorm的动漫视频弹幕网站( 开发中 )
