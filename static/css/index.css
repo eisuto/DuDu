@@ -51,3 +51,56 @@ body{
     display: none;
 }
 /*导航栏结束*/
+
+/*导航条开始*/
+#mo-in{
+    border:0 solid #FF7C00;
+    border-bottom: 2px solid #FF7C00;
+    background-color: #fff;
+    color: #FF7C00;
+}
+#sum{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: inline-block;
+    background-color: #FF7C00;
+    position: absolute;
+    top: -7px;
+    left: 76px;
+    padding: 3px;
+    line-height: 13px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 13px;
+}
+.nav-my{
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin:  0 auto;
+}
+.nav-tab{
+    width: 1160px;
+    border-bottom: 1px solid #ddd;
+    margin:  0 auto;
+    padding: 0;
+}
+.nav-tab li{
+    display: inline-block;
+    font-size: 17px;
+    margin: 10px;
+}
+.nav-tab li a{
+    position: relative;
+    color: #000;
+    font-weight: bolder;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 10px;
+    text-decoration:none;
+}
+.nav-tab li a:hover{
+    border:0 solid #FF7C00;
+    border-bottom: 2px solid #FF7C00;
+    background-color: #fff;
+    color: #FF7C00;
+}
