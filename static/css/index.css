@@ -168,11 +168,11 @@ body{
     height: 115px;
     display: inline-block;
     margin-left: 10px;
-    margin-bottom: 8px;
-    background-color: rgb(158, 172, 172);
+    margin-bottom: 12px;
+    background-color: rgb(183, 184, 184);
     border-radius: 4px;
 }
-.pr-video p{
+.pr-video>p{
     font-weight: lighter;
     color: #fff;
     font-size: 18px;
@@ -189,15 +189,33 @@ body{
     width: 205px;
     height: 115px;
     border-radius: 4px;
-    -webkit-transition: all 0.2s; 
-    -moz-transition:    all 0.2s; 
-    -ms-transition:     all 0.2s; 
-    -o-transition:      all 0.2s; 
-    transition:         all 0.2s; 
+    -webkit-transition: all 0.3s; 
+    -moz-transition:    all 0.3s; 
+    -ms-transition:     all 0.3s; 
+    -o-transition:      all 0.3s; 
+    transition:         all 0.3s; 
+}
+.mask p{
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+#mask-title{
+    top: 20px;
+    left: 10px;
+}
+#mask-up{
+    top:65px;
+    left: 10px;
+}
+#mask-click{
+    top: 88px;
+    left: 10px;
 }
 .pr-video a:hover .mask{
     opacity: 1;  
 }
-.pr-video:hover p{
+.pr-video:hover>p{
     opacity: 0; 
 }
