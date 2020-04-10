@@ -173,12 +173,18 @@ body{
     border-radius: 4px;
 }
 .pr-video>p{
-    font-weight: lighter;
+    position: absolute;
     color: #fff;
+    font-weight: bolder;
     font-size: 18px;
-    margin-top: 65px;
-    margin-left: 10px;
+    top: 70px;
+    left: 10px;
     opacity: 1; 
+    z-index: 999;
+}
+.pr-video>img{
+    width: 205px;
+    height: 115px;
 }
 .mask{
     position: absolute;
