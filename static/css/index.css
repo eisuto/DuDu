@@ -108,16 +108,96 @@ body{
 
 /*首页视频主内容*/
 .main{
-    width: 100%;
+    width: 1903px;
     height: 2000px;
+    background-color: #f8f8f8;
 }
 .main-center{
-    width: 1200px;
+    width: 90%;
     height: 2000px;
     margin: 0 auto;
-}
-.main-head{
     
 }
+.main-head{
+    padding-top: 30px;
+    width: 100%;
+}
 /*轮播图*/
+#main-left{
+    width: 700px;
+    height: 370px;
+}
+#myCarousel{
+    width: 700px;
+    height: 370px;
+    display: inline-block;
+}
+#item-img{
+    width: 700px;
+    height: 370px;
+}
+.carousel-indicators li{
+    border: 2px solid #fff;
+    width: 12px;
+    height: 12px;
+}
+.carousel-indicators .active {
+    background-color:#FF7C00;
+    width: 28px;
+    height: 14px;
+    margin: 0;
+}
 
+.hiSlider-btn-prev {
+    background: url(../img/左.png) no-repeat;
+}
+.hiSlider-btn-next {
+    background: url(../img/右.png) no-repeat;
+}
+/*右侧视频推荐*/
+.main-right{
+    display: inline-block;
+    width: 1000px;
+    height: 400px;
+    vertical-align: top;
+}
+.pr-video{
+    vertical-align: top;
+    position: relative;
+    width: 205px;
+    height: 115px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    background-color: rgb(158, 172, 172);
+    border-radius: 4px;
+}
+.pr-video p{
+    font-weight: lighter;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 65px;
+    margin-left: 10px;
+    opacity: 1; 
+}
+.mask{
+    position: absolute;
+    background-color: rgba(000, 000, 000, 0.4);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 205px;
+    height: 115px;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s; 
+    -moz-transition:    all 0.2s; 
+    -ms-transition:     all 0.2s; 
+    -o-transition:      all 0.2s; 
+    transition:         all 0.2s; 
+}
+.pr-video a:hover .mask{
+    opacity: 1;  
+}
+.pr-video:hover p{
+    opacity: 0; 
+}

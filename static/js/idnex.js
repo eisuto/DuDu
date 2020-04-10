@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
     get_user_by_index();
+
 });
 function get_user_by_index(){
     $.ajax({
