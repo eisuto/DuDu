@@ -17,4 +17,6 @@ func init() {
 	beego.Router("/logout"            ,&controllers.UserController{}, "*:Logout")
 	beego.Router("/user_post_by_index",&controllers.UserController{}, "*:UserOnlineCheck")
 	beego.Router("/get_email_code"    ,&controllers.UserController{}, "*:GetEmailCode")
+
+	beego.Router("/get_index_12video"    ,&controllers.VideoController{}, "*:GetIndexHeadVideo")
 }

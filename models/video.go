@@ -16,3 +16,9 @@ type Video struct {
 	Introduc  string `gorm:"size:200"`	//简介
 	duration  int    					//时长
 }
+
+func GetVideoINfoById(id int) Video  {
+	var video Video
+	db.Where("id = ?",id).Find(&video)
+	return video
+}

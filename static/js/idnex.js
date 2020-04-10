@@ -1,6 +1,6 @@
 $(document).ready(function(){ 
     get_user_by_index();
-
+    get_12video()
 });
 function get_user_by_index(){
     $.ajax({
@@ -18,6 +18,20 @@ function get_user_by_index(){
                 $('#user-info').css("display","block");
                 $('#user-info').html(msg.name+"<span class='caret'></span>");
             }
+        }
+    });
+}
+function get_12video(){
+    $.ajax({
+        async: false,
+        type:"POST",
+        url:"/get_index_12video",
+        //data:{"card":card,"pwd":pwd}
+        }).done(function(msg){
+        if(msg != null){
+            console.log("回调推荐视频成功")
+            console.log(msg.vids)
+            
         }
     });
 }
