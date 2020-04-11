@@ -7,6 +7,7 @@ body{
     src: url('../img/BreeSerif-Regular.ttf')
         ,url('../img/BreeSerif-Regular.ttf'); /* IE9+ */
 }
+
 #logo{
     color: #FF7C00;
     font-weight: bolder;
@@ -120,7 +121,8 @@ body{
 }
 .main-head{
     padding-top: 30px;
-    width: 100%;
+    width: 1578px;
+    margin: 0 auto;
 }
 /*轮播图*/
 #main-left{
@@ -157,7 +159,7 @@ body{
 /*右侧视频推荐*/
 .main-right{
     display: inline-block;
-    width: 1000px;
+    width: 875px;
     height: 400px;
     vertical-align: top;
 }
@@ -224,4 +226,19 @@ body{
 }
 .pr-video:hover>p{
     opacity: 0; 
+}
+/*动画区*/
+.main-area{
+    padding-top: 30px;
+    width: 1578px;
+    margin: 0 auto;
+    border-bottom: 2px solid #ddd;
+}
+.area-title{
+    color: #FF7C00;
+    font-size: 32px;
+    font-weight: bolder;
+    position: relative;
+    top: 20px;
+    left: 20px;
 }
