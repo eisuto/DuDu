@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="695d4c4e-b652-4b89-9765-3758210e69ad" name="Default Changelist" comment="主页更新" />
+    <list default="true" id="695d4c4e-b652-4b89-9765-3758210e69ad" name="Default Changelist" comment="主页更新">
+      <change beforePath="$PROJECT_DIR$/static/img/fm/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/fm/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/fm/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/fm/16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/fm/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/fm/17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/fm/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/fm/18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/fm/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/fm/19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/head.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/head.jpg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
