@@ -14,7 +14,9 @@ type Video struct {
 	Like      int    `gorm:"default:0"` //赞
 	UnLike    int    `gorm:"default:0"`	//踩
 	Introduc  string `gorm:"size:200"`	//简介
+	Area      string `gorm:"size:64"`   //分区
 	duration  int    					//时长
+	
 }
 
 func GetVideoINfoById(id int) Video  {
