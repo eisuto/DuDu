@@ -15,7 +15,7 @@ type Video struct {
 	UnLike    int    `gorm:"default:0"`	//踩
 	Introduc  string `gorm:"size:200"`	//简介
 	Area      string `gorm:"size:64"`   //分区
-	duration  int    					//时长
+	Duration  int    `gorm:"size:32"` 	//时长
 	
 }
 

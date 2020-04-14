@@ -19,4 +19,5 @@ func init() {
 	beego.Router("/get_email_code"    ,&controllers.UserController{}, "*:GetEmailCode")
 
 	beego.Router("/get_index_12video"    ,&controllers.VideoController{}, "*:GetIndexHeadVideo")
+    beego.Router("/get_index_animeVideo" ,&controllers.VideoController{}, "*:GetIndexAnimeVideo")
 }

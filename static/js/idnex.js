@@ -1,6 +1,8 @@
 $(document).ready(function(){ 
     get_user_by_index();
-    get_12video()
+    
+    get_12video();
+    get_area_video();
 });
 function get_user_by_index(){
     $.ajax({
@@ -59,16 +61,28 @@ function get_area_video(){
             console.log("回调推荐视频成功")
             console.log(msg.vids)
             for(var i=0;i<msg.vids.length;i++){
-                $('#12v').append(
-                    "<div class='pr-video'>"+
-                    "<img src='"+msg.vids[i].FCUrl+"' alt=''>"+
-                    "<p id='big-video-title'>"+msg.vids[i].Title+"</p>"+
-                    "<a href='./static/img/video/"+msg.vids[i].ID+".mp4'><div class='mask'>"+
-                        "<p id='mask-title'>"+msg.vids[i].Title+"</p>"+
-                        "<p id='mask-up'>UP: eisuto</p>"+
-                        "<p id='mask-click'><i class='glyphicon glyphicon-expand'></i>"+msg.vids[i].Play+"</p>"+
-                    "</div></a>"+
-                    "</div>"
+                $('#anime-video').append(
+                    "<div class='area-one'>"+
+                            "<div class='area-video'>"+
+                            "<img src='"+msg.vids[i].FCUrl+"' alt=''>"+
+                                "<div class='yinying'></div>"+
+                                "<p>"+
+                                    "<i class='glyphicon glyphicon-expand'></i>"+
+                                    msg.vids[i].Play+
+                                    "<i class='glyphicon glyphicon-heart'></i>"+
+                                    msg.vids[i].Like+
+                                    "<span class='mask-time'>"+msg.vids[i].Duration+"</span>"+
+                                "</p>"+
+                                "<a href='./static/img/video/"+msg.vids[i].ID+".mp4'>"+
+                                    "<div class='area-mask'>"+                                  
+                                        "<p><i class='glyphicon glyphicon-play-circle'></i></p>"+
+                                    "</div>"+
+                                "</a>"+
+                            "</div>"+
+                            "<div class='video-title'>"+
+                                "<p>"+msg.vids[i].Title+"</p>"+
+                            "</div>"+
+                        "</div>"
                 )
             }
         }

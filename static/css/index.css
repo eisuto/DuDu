@@ -319,6 +319,7 @@ body{
     transition:         all 0.3s; 
     
 }
+
 .area-mask p{
     color: #fff;
     position: absolute;
@@ -326,6 +327,11 @@ body{
     left: 160px;
     font-weight: bolder;
     font-size: 28px;
+}
+.mask-time{
+    color: #fff;
+    
+    margin-left:106px;   
 }
 .area-video a:hover .area-mask{
     opacity: 1;  
