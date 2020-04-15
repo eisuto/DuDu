@@ -68,3 +68,32 @@ body{
     width: 0px;
     height: 0px;
 }
+#title{
+    padding-top: 20px;
+    font-size: 22px;
+    color: #000;
+    font-weight: bolder;
+}
+#play-date{
+    color: #606060;
+    font-size: 18px;
+    width: 800px;
+    display: inline-block;
+}
+.ll{
+    width: 12%;
+    
+    float: right;
+}
+#like{
+    float: left;
+    
+    font-size: 22px;
+    
+}
+#unlike{
+    float: right;
+    
+    font-size: 22px;
+    
+}

@@ -13,6 +13,8 @@ type VideoController struct {
 func (c *VideoController) GetVideoInfo(){
 	id ,_ := strconv.Atoi(c.GetString("id"))
 	v  := models.GetVideoInfoById(id)
+	//点击+1
+	models.UpVideoPlayById(id)
 	c.Data["json"] = map[string]interface{}{"v":v}
 	c.ServeJSON()
 }

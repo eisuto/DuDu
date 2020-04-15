@@ -18,7 +18,10 @@ type Video struct {
 	Duration  int    `gorm:"size:32"` 	//时长
 	
 }
-
+func UpVideoPlayById(id int){
+	v := GetVideoInfoById(id)
+	db.Model(&v).Update("play", v.Play+1)
+}
 func GetVideoInfoById(id int) Video  {
 	var video Video
 	db.Where("id = ?",id).Find(&video)

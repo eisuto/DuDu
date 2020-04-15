@@ -38,7 +38,7 @@ function get_12video(){
                     "<div class='pr-video'>"+
                     "<img src='"+msg.vids[i].FCUrl+"' alt=''>"+
                     "<p id='big-video-title'>"+msg.vids[i].Title+"</p>"+
-                    "<a href='./static/img/video/"+msg.vids[i].ID+".mp4'><div class='mask'>"+
+                    "<a href='/dd?"+msg.vids[i].ID+"'>"+"<div class='mask'>"+
                         "<p id='mask-title'>"+msg.vids[i].Title+"</p>"+
                         "<p id='mask-up'>UP: eisuto</p>"+
                         "<p id='mask-click'><i class='glyphicon glyphicon-expand'></i>"+msg.vids[i].Play+"</p>"+
@@ -75,7 +75,7 @@ function get_area_video(){
                                     msg.vids[i].Like+
                                     "<span class='mask-time'>"+formatDuraton(msg.vids[i].Duration)+"</span>"+
                                 "</p>"+
-                                "<a href='./static/img/video/"+msg.vids[i].ID+".mp4'>"+
+                                "<a href='/dd?"+msg.vids[i].ID+"'>"+
                                     "<div class='area-mask'>"+                                  
                                         "<p><i class='glyphicon glyphicon-play-circle'></i></p>"+
                                     "</div>"+
