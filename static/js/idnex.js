@@ -61,6 +61,8 @@ function get_area_video(){
             console.log("回调推荐视频成功")
             console.log(msg.vids)
             for(var i=0;i<msg.vids.length;i++){
+                var time_m = parseInt(msg.vids[i].Duration/60);
+                var time_s = parseInt(msg.vids[i].Duration%60);
                 $('#anime-video').append(
                     "<div class='area-one'>"+
                             "<div class='area-video'>"+
@@ -71,7 +73,7 @@ function get_area_video(){
                                     msg.vids[i].Play+
                                     "<i class='glyphicon glyphicon-heart'></i>"+
                                     msg.vids[i].Like+
-                                    "<span class='mask-time'>"+msg.vids[i].Duration+"</span>"+
+                                    "<span class='mask-time'>"+formatDuraton(msg.vids[i].Duration)+"</span>"+
                                 "</p>"+
                                 "<a href='./static/img/video/"+msg.vids[i].ID+".mp4'>"+
                                     "<div class='area-mask'>"+                                  
@@ -87,4 +89,27 @@ function get_area_video(){
             }
         }
     });
+}
+function formatDuraton(time){
+    if(time > -1){
+        var hour = Math.floor(time/3600);
+        var min = Math.floor(time/60) % 60;
+        var sec = time % 60;
+        if(hour < 10) {
+            time = '0'+ hour + ":";
+        } else {
+            time = hour + ":";
+        }
+
+        if(min < 10){
+            time += "0";
+        }
+        time += min + ":";
+
+        if(sec < 10){
+            time += "0";
+        }
+        time += sec;
+    }
+    return time;
 }

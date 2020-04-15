@@ -19,7 +19,7 @@ type Video struct {
 	
 }
 
-func GetVideoINfoById(id int) Video  {
+func GetVideoInfoById(id int) Video  {
 	var video Video
 	db.Where("id = ?",id).Find(&video)
 	return video

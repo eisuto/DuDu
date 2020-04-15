@@ -23,3 +23,6 @@ func (c *MainController) RegisterPage() {
 func (c *MainController) AppPage() {
 	c.TplName = "app.html"
 }
+func (c *MainController) VideoPage() {
+	c.TplName = "du.html"
+}

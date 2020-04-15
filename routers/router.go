@@ -11,6 +11,7 @@ func init() {
 	beego.Router("/login"	  ,&controllers.MainController{},"*:LoginPage")
 	beego.Router("/register"  ,&controllers.MainController{},"*:RegisterPage")
 	beego.Router("/app"	      ,&controllers.MainController{},"*:AppPage")
+	beego.Router("/dd?:id"    ,&controllers.MainController{},"*:VideoPage")
 
 	beego.Router("/login_post"	      ,&controllers.UserController{}, "*:LoginCheck")
 	beego.Router("/register_post"	  ,&controllers.UserController{}, "*:Register")
@@ -20,4 +21,7 @@ func init() {
 
 	beego.Router("/get_index_12video"    ,&controllers.VideoController{}, "*:GetIndexHeadVideo")
     beego.Router("/get_index_animeVideo" ,&controllers.VideoController{}, "*:GetIndexAnimeVideo")
+
+	beego.Router("/get_video_info" ,&controllers.VideoController{}, "*:GetVideoInfo")
+
 }
