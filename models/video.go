@@ -19,6 +19,11 @@ type Video struct {
 	Comments  []Comment
 	
 }
+
+func AddComment(uid,vid int,comm string)  {
+	c := Comment{VideoID:vid,UserID:uid,Text:comm}
+	db.Save(&c)
+}
 func UpVideoPlayById(id int){
 	v := GetVideoInfoById(id)
 	db.Model(&v).Update("play", v.Play+1)

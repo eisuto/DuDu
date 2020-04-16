@@ -114,3 +114,31 @@ body{
     display: inline-block;
     width: auto;
 }
+.public{
+    width: 100%;
+    height: auto;
+    min-height: 80px;
+}
+.public #public-comm{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #777;
+    outline:none;
+    -webkit-transition: all 0.3s; 
+    -moz-transition:    all 0.3s; 
+    -ms-transition:     all 0.3s; 
+    -o-transition:      all 0.3s; 
+    transition:         all 0.3s; 
+}
+.public #public-comm:hover{
+    border-bottom: 2px solid #000;
+}
+.comm-but{
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+    width: 88px;
+    height: 42px;
+    background-color: #FF7C00;
+    float: right;
+}

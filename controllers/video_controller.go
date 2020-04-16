@@ -9,7 +9,16 @@ import (
 type VideoController struct {
 	beego.Controller
 }
-//
+//增加一条评论
+func (c *VideoController) AddVideoComment()  {
+	uid,_ := strconv.Atoi(c.GetString("uid"))
+	vid,_ := strconv.Atoi(c.GetString("vid"))
+	comm  := c.GetString("comm")
+	models.AddComment(uid,vid,comm)
+	c.Data["json"] = map[string]interface{}{"mod":true}
+	c.ServeJSON()
+}
+//获取视频信息
 func (c *VideoController) GetVideoInfo(){
 	id ,_ := strconv.Atoi(c.GetString("id"))
 	v  := models.GetVideoInfoById(id)

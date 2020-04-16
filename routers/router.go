@@ -23,5 +23,6 @@ func init() {
     beego.Router("/get_index_animeVideo" ,&controllers.VideoController{}, "*:GetIndexAnimeVideo")
 
 	beego.Router("/get_video_info" ,&controllers.VideoController{}, "*:GetVideoInfo")
+    beego.Router("/post_comment"   ,&controllers.VideoController{}, "*:AddVideoComment")
 
 }
