@@ -16,6 +16,7 @@ type Video struct {
 	Introduc  string `gorm:"size:200"`	//简介
 	Area      string `gorm:"size:64"`   //分区
 	Duration  int    `gorm:"size:32"` 	//时长
+	Comments  []Comment
 	
 }
 func UpVideoPlayById(id int){

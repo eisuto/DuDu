@@ -14,6 +14,7 @@ func Init() {
 	//return db
 	db.AutoMigrate(&User{})
 	db.AutoMigrate(&Video{})
+	db.AutoMigrate(&Comment{})
 	/*var count int
 	// Model(&User{})查询用户表, Count(&count) 将用户表的数据赋值给count字段。
 	if err := db.Model(&User{}).Count(&count).Error; err == nil && count == 0 {

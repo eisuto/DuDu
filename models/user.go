@@ -14,6 +14,7 @@ type User struct {
 	Avatar   string `gorm:"size:32"`
 	Role     int    `gorm:"default:1"` // 0 管理员 1正常用户
 	VideosSelfUp []Video //`gorm:"foreignkey:UserId;ASSOCIATION_FOREIGNKEY:ID"`
+	Comments     []Comment
 }
 
 func GetUserByCard(card string) User{
