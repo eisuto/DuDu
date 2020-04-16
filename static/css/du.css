@@ -62,7 +62,8 @@ body{
 }
 #info{
     width: 1289px;
-    height: 90px;
+    height: auto;
+    
 }
 [class^="menu"]{
     width: 0px;
@@ -79,21 +80,37 @@ body{
     font-size: 18px;
     width: 800px;
     display: inline-block;
+
 }
 .ll{
-    width: 12%;
-    
+    width: auto;
+    font-size: 22px;
     float: right;
 }
-#like{
-    float: left;
-    
-    font-size: 22px;
-    
+.ll p{
+    display: inline-block;
 }
-#unlike{
-    float: right;
-    
+
+.introduc{
+    width: 100%;
+    height: 110px;
+    border-top: 1px solid #e0e0e0;
+}
+.introduc p{
+    line-height: 26px;
+    font-size: 16px;
+    color: #000;
+    padding-top: 20px;
+    display: block;
+    width: 700px;
+}
+/*评论*/
+.comment{
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
     font-size: 22px;
-    
+}
+.comment p{
+    display: inline-block;
+    width: auto;
 }

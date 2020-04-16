@@ -90,6 +90,8 @@ function get_area_video(){
         }
     });
 }
+
+//视频时长转换
 function formatDuraton(time){
     if(time > -1){
         var hour = Math.floor(time/3600);

@@ -11,7 +11,13 @@ $("div[class^='menu']").html(" ");
 $("div[class^='logo']").html(" ");
 
 
+function timeFormatter(value) {
 
+        var da = new Date(value.replace("/Date(", "").replace(")/" , "").split( "+")[0]);
+    
+        return da.getFullYear() + "-" + (da.getMonth() + 1) + "-" + da.getDate() + " " + da.getHours() + ":" + da.getMinutes() + ":" + da.getSeconds();
+    
+    }
 function getVoideInf(){
     console.log(location.search.substr(1))
     $.ajax({
@@ -23,10 +29,11 @@ function getVoideInf(){
         if(msg != null){
             console.log(msg.v)
             $('#title').text(msg.v.Title);
-            $('#play-date').text(msg.v.Play+" 次观看 · "+msg.v.CreatedAt);
+            $('#play-date').text(msg.v.Play+" 次观看 · "+timeFormatter(msg.v.CreatedAt));
             
-            $('#like').text(msg.v.Like);
-            $('#unlike').text(msg.v.UnLike);
+            $('#like').text(" "+msg.v.Like);
+            $('#unlike').text(" "+msg.v.UnLike);
+            $('#introduc').text(msg.v.Introduc);
         }
     });
 }
