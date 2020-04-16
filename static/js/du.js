@@ -49,7 +49,7 @@ function getVoideInf(){
             console.log(msg.v)
             $('#title').text(msg.v.Title);
             $('#play-date').text(msg.v.Play+" 次观看 · "+timeFormatter(msg.v.CreatedAt));
-            
+            $('#comment-size').text(msg.v.Comm+" 条评论")
             $('#like').text(" "+msg.v.Like);
             $('#unlike').text(" "+msg.v.UnLike);
             $('#introduc').text(msg.v.Introduc);
