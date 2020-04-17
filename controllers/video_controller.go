@@ -9,6 +9,18 @@ import (
 type VideoController struct {
 	beego.Controller
 }
+//获取视频评论
+func (c *VideoController) GetComments(){
+	uid,_ := strconv.Atoi(c.GetString("uid"))
+	vid,_ := strconv.Atoi(c.GetString("vid"))
+	cs := models.GetAllComments(uid,vid)
+	for i:=0;i< len(cs);i++{
+		cs[i].User = models.GetUserByCard(c.GetString("uid"))
+	}
+	c.Data["json"] = map[string]interface{}{"cs":cs}
+	c.ServeJSON()
+
+}
 //增加一条评论
 func (c *VideoController) AddVideoComment()  {
 	uid,_ := strconv.Atoi(c.GetString("uid"))

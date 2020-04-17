@@ -21,16 +21,20 @@ type Video struct {
 	
 }
 
+
+//增加一条评论
 func AddComment(uid,vid int,comm string)  {
 	c := Comment{VideoID:vid,UserID:uid,Text:comm}
 	v := GetVideoInfoById(vid)
 	db.Save(&c)
 	db.Model(&v).Update("comm", v.Comm+1)
 }
+//播放+1
 func UpVideoPlayById(id int){
 	v := GetVideoInfoById(id)
 	db.Model(&v).Update("play", v.Play+1)
 }
+//根据id获取视频信息
 func GetVideoInfoById(id int) Video  {
 	var video Video
 	db.Where("id = ?",id).Find(&video)

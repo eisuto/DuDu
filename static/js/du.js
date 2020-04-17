@@ -10,8 +10,10 @@ $(document).ready(function(){
     getVoideInf();
     $("div[class^='menu']").html(" ");
     $("div[class^='logo']").html(" ");
+    getComments();
 
 });
+var videoTime;
 var uid = -1;
 //增加评论
 function addComment(){
@@ -46,13 +48,53 @@ function getVoideInf(){
         data:{"id":location.search.substr(1)}
         }).done(function(msg){
         if(msg != null){
+            videoTime  = timeFormatter(msg.v.CreatedAt);
             console.log(msg.v)
             $('#title').text(msg.v.Title);
-            $('#play-date').text(msg.v.Play+" 次观看 · "+timeFormatter(msg.v.CreatedAt));
+            $('#play-date').text(msg.v.Play+" 次观看 · "+videoTime);
             $('#comment-size').text(msg.v.Comm+" 条评论")
             $('#like').text(" "+msg.v.Like);
             $('#unlike').text(" "+msg.v.UnLike);
             $('#introduc').text(msg.v.Introduc);
+        }
+    });
+}
+//计算时间差
+function time_last(t1){
+    t1 = timeFormatter(t1);
+    var date1 = new Date();
+    var date2 = new Date(t1.replace(/\-/g, "/"));
+    var date3 = date1.getTime()-date2.getTime(); 
+    var days  = Math.floor(date3/(24*3600*1000));
+    return days;
+
+}
+//获取评论
+function getComments(){
+    $.ajax({
+        async: false,
+        type:"POST",
+        url:"/get_comments",
+        data:{"uid":location.search.substr(1),"vid":location.search.substr(1)}
+        }).done(function(msg){
+        if(msg != null){
+            //window.location.href="/"
+            console.log("回调全部评论成功");
+            console.log(msg);
+            for(var i=0;i<msg.cs.length;i++){
+                $('#user-m').append(
+                    "<div class='user-comm'>"+
+                    "<div class='comm-tx'>"+
+                    "<img src='../static/img/tx.jpg' alt=''>"+
+                    "</div>"+
+                    "<div class='user-comm-main'>"+
+                    "<p id='comm-user-name'>"+msg.cs[i].User.NickName+"</p>"+
+                    "<p id='comm-last-time'>"+time_last(msg.cs[i].CreatedAt)+"天前</p>"+
+                    "<p id='comm-user-text'>"+msg.cs[i].Text+"</p>"+
+                    "</div>"+
+                    "</div>"
+                )
+            }
         }
     });
 }

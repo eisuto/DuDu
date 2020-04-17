@@ -142,3 +142,37 @@ body{
     background-color: #FF7C00;
     float: right;
 }
+.user-comm{
+    margin-top: 30px;
+    min-height: 120px;
+    width: 100%;
+}
+.comm-tx{
+    float: left;
+}
+.user-comm img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+.user-comm-main{
+    padding-left: 60px;
+    border-bottom: 2px solid rgb(228, 228, 228);
+}
+#comm-user-name{
+    font-size: 16px;
+    font-weight: bolder;
+}
+#comm-last-time{
+    padding-left: 5px;
+    color: rgb(110, 110, 110);
+    font-size: 16px;
+    font-weight: lighter;
+}
+#comm-user-text{
+    display: block;
+    color: #222;
+    font-size: 17px;
+    font-weight: lighter;
+    
+}

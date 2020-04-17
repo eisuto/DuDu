@@ -4,6 +4,7 @@ $(document).ready(function(){
     get_12video();
     get_area_video();
 });
+//根据id获取用户信息
 function get_user_by_index(){
     $.ajax({
         async: false,
