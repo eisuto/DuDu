@@ -11,7 +11,7 @@ type User struct {
 	Email    string `gorm:"size:32,unique_index"`
 	Phone    string `gorm:"size:11,unique_index"`
 	PassWord string `gorm:"size:32"`
-	Avatar   string `gorm:"size:32"`
+	Avatar   string `gorm:"size:32",default:"/static/img/default-avatar.png"`
 	Role     int    `gorm:"default:1"` // 0 管理员 1正常用户
 	VideosSelfUp []Video //`gorm:"foreignkey:UserId;ASSOCIATION_FOREIGNKEY:ID"`
 	Comments     []Comment

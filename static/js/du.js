@@ -15,21 +15,42 @@ $(document).ready(function(){
 });
 var videoTime;
 var uid = -1;
+//判断是否登录
+function loginCheck(){
+    if(uid == -1){
+        layer.msg('未登录的话不能进行此操作哦', {
+            time: 2000 //不自动关闭
+            ,btn: ['登录', '注册']
+            ,yes: function(index){
+                window.location.href="/login"
+            }
+            ,btn2: function(index){
+                window.location.href="/register"
+            }
+        });
+        return false;
+    }
+    return true;
+}
 //增加评论
 function addComment(){
-    var comm = $('#public-comm').val();
-    console.log(comm);
-    console.log(uid);
-    $.ajax({
-        async: false,
-        type:"POST",
-        url:"/post_comment",
-        data:{"uid":location.search.substr(1),"vid":location.search.substr(1),"comm":comm}
-        }).done(function(msg){
-        if(msg != null){
-
-        }
-    });
+    if(loginCheck()){
+        var comm = $('#public-comm').val();
+        console.log(comm);
+        console.log(uid);
+        $.ajax({
+            async: false,
+            type:"POST",
+            url:"/post_comment",
+            data:{"uid":uid,"vid":location.search.substr(1),"comm":comm}
+            }).done(function(msg){
+            if(msg != null){
+                $('.user-comm').remove();
+                getComments();
+                $('#public-comm').val(" ");
+            }
+        });
+    }
 }
 function timeFormatter(value) {
 
@@ -62,11 +83,28 @@ function getVoideInf(){
 //计算时间差
 function time_last(t1){
     t1 = timeFormatter(t1);
+    var t = "0秒前";
     var date1 = new Date();
     var date2 = new Date(t1.replace(/\-/g, "/"));
     var date3 = date1.getTime()-date2.getTime(); 
-    var days  = Math.floor(date3/(24*3600*1000));
-    return days;
+    var days    = Math.floor(date3/(24*3600*1000));
+    var hours   = Math.floor(date3/(3600*1000));
+    var minutes = Math.floor(date3/(60*1000));
+    var seconds = Math.round(date3/1000);
+    if(days>0){
+        t = days+"天前";
+    }
+    else if(hours>0){
+        t = hours+"小时前";
+    }
+    else if(minutes>0){
+        t = minutes+"分前";
+    }
+    else if(seconds>0){
+        t = seconds+"秒前";
+    }
+    
+    return t;
 
 }
 //获取评论
@@ -75,21 +113,21 @@ function getComments(){
         async: false,
         type:"POST",
         url:"/get_comments",
-        data:{"uid":location.search.substr(1),"vid":location.search.substr(1)}
+        data:{"vid":location.search.substr(1)}
         }).done(function(msg){
         if(msg != null){
             //window.location.href="/"
             console.log("回调全部评论成功");
             console.log(msg);
-            for(var i=0;i<msg.cs.length;i++){
+            for(var i=msg.cs.length-1;i>=0;i--){
                 $('#user-m').append(
                     "<div class='user-comm'>"+
                     "<div class='comm-tx'>"+
-                    "<img src='../static/img/tx.jpg' alt=''>"+
+                    "<img src='.."+msg.cs[i].User.Avatar+"' alt=''>"+
                     "</div>"+
                     "<div class='user-comm-main'>"+
                     "<p id='comm-user-name'>"+msg.cs[i].User.NickName+"</p>"+
-                    "<p id='comm-last-time'>"+time_last(msg.cs[i].CreatedAt)+"天前</p>"+
+                    "<p id='comm-last-time'>"+time_last(msg.cs[i].CreatedAt)+"</p>"+
                     "<p id='comm-user-text'>"+msg.cs[i].Text+"</p>"+
                     "</div>"+
                     "</div>"

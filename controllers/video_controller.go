@@ -11,11 +11,12 @@ type VideoController struct {
 }
 //获取视频评论
 func (c *VideoController) GetComments(){
-	uid,_ := strconv.Atoi(c.GetString("uid"))
 	vid,_ := strconv.Atoi(c.GetString("vid"))
-	cs := models.GetAllComments(uid,vid)
+	cs := models.GetAllComments(vid)
+
 	for i:=0;i< len(cs);i++{
-		cs[i].User = models.GetUserByCard(c.GetString("uid"))
+		cs[i].User = models.GetUserByCard(strconv.Itoa(cs[i].UserID))
+		beego.Debug(cs[i].UserID)
 	}
 	c.Data["json"] = map[string]interface{}{"cs":cs}
 	c.ServeJSON()
