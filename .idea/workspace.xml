@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="695d4c4e-b652-4b89-9765-3758210e69ad" name="Default Changelist" comment="index-up">
-      <change beforePath="$PROJECT_DIR$/controllers/video_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/video_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/comment.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/comment.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/tx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/du.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/du.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/du.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/du.html" afterDir="false" />
-    </list>
+    <list default="true" id="695d4c4e-b652-4b89-9765-3758210e69ad" name="Default Changelist" comment="index-up" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
