@@ -2,7 +2,7 @@ var videoObject = {
     logo: 'dudu', //设置logo，非必须
     container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
     variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
-    video:'../static/img/video/'+location.search.substr(1)+'.mp4'//视频地址
+    video:'../static/img/video/'+location.search.substr(1)+'_dudu.mp4'//视频地址
 };
 $(document).ready(function(){ 
     get_user_by_index();
