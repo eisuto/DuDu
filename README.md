@@ -7,7 +7,7 @@ demo: http://anqiai.cn/ [已失效]
 
 ## 主页
 
-![index_img](.\dis\index_img.png)
+![index_img](./dis/index_img.png)
 
 ## 视频播放页
 
