@@ -2,7 +2,7 @@ package com.poi.dudu.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.poi.dudu.Repository.UserRepositiory;
+import com.poi.dudu.repository.UserRepository;
 import com.poi.dudu.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    private UserRepositiory userRepositiory;
+    private UserRepository userRepository;
 
     /**
      * 约定返回格式
@@ -39,7 +39,7 @@ public class UserController {
      */
     @RequestMapping("/user/register")
     public String register(@RequestBody User user) {
-       userRepositiory.save(user);
+        userRepository.save(user);
         return "index";
     }
 
@@ -52,7 +52,7 @@ public class UserController {
     @RequestMapping("/user/login")
     public String login(String phone,String password) {
         String code = "200";
-        User u =  userRepositiory.findByPhoneAndPassword(phone,password);
+        User u =  userRepository.findByPhoneAndPassword(phone,password);
         if(u==null) {
             code = "500";
         }

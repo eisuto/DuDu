@@ -1,12 +1,9 @@
-package com.poi.dudu.Repository;
+package com.poi.dudu.repository;
 
 import com.poi.dudu.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- * @author eisuto
- */
-public interface UserRepositiory extends JpaRepository<User,Long> {
+public interface UserRepository  extends JpaRepository<User,Long> {
     /**
      * 登录
      * @param phone 手机号码
