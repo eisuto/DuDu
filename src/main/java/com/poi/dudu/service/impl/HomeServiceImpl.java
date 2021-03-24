@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+
 /**
  * @author eisuto
  */
@@ -26,6 +27,6 @@ public class HomeServiceImpl implements HomeService {
         Home home = new Home();
         List<Recommend> recommendList = recommendMapper.selectList(null);
         home.setRecommendList(recommendList);
-        return new Response<>(0, home);
+        return new Response<>(home);
     }
 }

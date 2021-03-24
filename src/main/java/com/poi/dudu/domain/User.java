@@ -11,6 +11,9 @@ import java.util.Date;
 public class User {
     private Long id;
     private String name;
-    private Integer age;
+    private Integer level;
     private String email;
+    private String phone;
+    private Date createTime;
+    private Date loginTime;
 }

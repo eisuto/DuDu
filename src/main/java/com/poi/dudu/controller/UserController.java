@@ -1,7 +1,10 @@
 package com.poi.dudu.controller;
 
+import com.poi.dudu.base.Response;
 import com.poi.dudu.domain.User;
 import com.poi.dudu.mapper.UserMapper;
+import com.poi.dudu.service.UserService;
+import org.apache.ibatis.annotations.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,13 +16,11 @@ import java.util.List;
 public class UserController {
 
     @Resource
-    UserMapper userMapper;
-    @RequestMapping("/all")
-    public List<User> all(User user){
-        userMapper.insert(user);
-        List<User> userList = userMapper.selectList(null);
-        userList.forEach(System.out::println);
-        return userList;
+    UserService userService;
+
+    @RequestMapping("/register")
+    public Response register(User user){
+        return userService.register(user);
     }
 
 }
