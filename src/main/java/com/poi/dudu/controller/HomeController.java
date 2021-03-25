@@ -6,15 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 
 /**
+ * 主页控制器
  * @author eisuto
  */
 @RestController
 @RequestMapping("/home")
 public class HomeController {
 
-    @Autowired
+    @Resource
     HomeService homeService;
 
     @RequestMapping("/data")

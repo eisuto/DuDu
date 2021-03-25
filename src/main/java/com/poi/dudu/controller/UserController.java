@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.List;
 
+/**用户相关 控制器
+ * @author eisuto
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -19,7 +22,7 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("/register")
-    public Response register(User user){
+    public Response register(User user) {
         return userService.register(user);
     }
 

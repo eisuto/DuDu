@@ -2,6 +2,9 @@ package com.poi.dudu.base;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.Vector;
+
 /**
  * @author eisuto
  */
@@ -18,9 +21,19 @@ public class Response<T> {
     }
 
     public Response(T result) {
-        this.code = 0;
-        this.msg = "操作成功";
-        this.result = result;
+        this(0, "操作成功", result);
+    }
+
+    public Response() {
+        this(null);
+    }
+
+    /**
+     * 操作失败时
+     */
+    public void fail(){
+        this.code = -1;
+        this.msg = "操作失败";
     }
 
 }

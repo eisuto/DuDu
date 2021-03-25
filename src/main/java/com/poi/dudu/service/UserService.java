@@ -12,5 +12,5 @@ public interface UserService {
      *
      * @return
      */
-    Response register(User user);
+    Response register(User user) throws Exception;
 }
