@@ -25,7 +25,7 @@ public class HomeServiceImpl implements HomeService {
     @Override
     public Response data() {
         Home home = new Home();
-        List<Recommend> recommendList = recommendMapper.selectList(null);
+        List<Recommend> recommendList = recommendMapper.findAll();
         home.setRecommendList(recommendList);
         return new Response<>(home);
     }

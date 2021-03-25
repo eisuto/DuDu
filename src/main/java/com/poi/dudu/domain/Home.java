@@ -1,7 +1,9 @@
 package com.poi.dudu.domain;
 
 import lombok.Data;
+import org.hibernate.annotations.Table;
 
+import javax.persistence.Entity;
 import java.util.List;
 
 /**

@@ -1,8 +1,7 @@
 package com.poi.dudu.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.poi.dudu.domain.Recommend;
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,6 +9,5 @@ import org.springframework.stereotype.Repository;
  * @author eisuto
  */
 @Repository
-@Mapper
-public interface RecommendMapper extends BaseMapper<Recommend> {
+public interface RecommendMapper extends JpaRepository<Recommend, Long> {
 }
