@@ -7,12 +7,14 @@ import com.poi.dudu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Vector;
 
 
 /**
  * 用户相关业务 服务层实现
+ *
  * @author eisuto
  */
 @Service
@@ -24,7 +26,7 @@ public class UserServiceImpl implements UserService {
      * 注册
      */
     @Override
-    public Response register(User user) throws Exception{
+    public Response register(User user) throws Exception {
         Response<User> response = new Response<>();
 
         User re = userMapper.save(user);
@@ -38,9 +40,25 @@ public class UserServiceImpl implements UserService {
     @Override
     public Response login(User user) throws Exception {
         Response<User> response = new Response<>();
-        User re = userMapper.findByPasswordAndName(user.getPassword(),user.getName());
-        response.setResult(re);
+        User re = userMapper.findByPasswordAndName(user.getPassword(), user.getName());
+        if (re == null) {
+            response.fail();
+        } else {
+            response.setResult(re);
+        }
         return response;
+    }
+
+    /**
+     * 空间
+     *
+     * @param user 信息
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Response space(User user) throws Exception {
+        return null;
     }
 
 }

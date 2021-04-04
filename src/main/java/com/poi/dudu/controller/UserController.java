@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**用户相关 控制器
@@ -26,8 +27,17 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public Response login(User user) throws Exception{
-        return userService.login(user);
+    public Response login(User user, HttpSession session) throws Exception{
+        Response response = userService.login(user);
+        if(response.getResult()!=null){
+            User userInfo = (User)response.getResult();
+            session.setAttribute("userId",userInfo.getId());
+        }
+        return  response;
+    }
+    @RequestMapping("/space")
+    public Response space(User user) throws Exception{
+        return userService.space(user);
     }
 
 }
