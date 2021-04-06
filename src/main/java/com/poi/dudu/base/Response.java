@@ -12,16 +12,16 @@ import java.util.Vector;
 public class Response<T> {
     private Integer code;
     private String msg;
-    private T result;
+    private T data;
 
-    public Response(Integer code, String msg, T result) {
+    public Response(Integer code, String msg, T data) {
         this.code = code;
         this.msg = msg;
-        this.result = result;
+        this.data = data;
     }
 
-    public Response(T result) {
-        this(0, "操作成功", result);
+    public Response(T data) {
+        this(0, "操作成功", data);
     }
 
     public Response() {
@@ -32,7 +32,7 @@ public class Response<T> {
      * 操作失败时
      */
     public void fail(){
-        this.code = -1;
+        this.code = 400;
         this.msg = "操作失败";
     }
 
