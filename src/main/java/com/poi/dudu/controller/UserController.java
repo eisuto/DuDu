@@ -5,12 +5,11 @@ import com.poi.dudu.base.Response;
 import com.poi.dudu.domain.User;
 import com.poi.dudu.mapper.UserMapper;
 import com.poi.dudu.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -60,6 +59,14 @@ public class UserController {
     @GetMapping("/users")
     public Response usersList(PageBase page) throws Exception {
         return userService.usersList(page);
+    }
+
+    /**
+     * 管理员添加用户
+     */
+    @PostMapping("/users")
+    public Response userAdd(@RequestBody User user) throws Exception {
+        return userService.usersAdd(user);
     }
 
 

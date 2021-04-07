@@ -80,4 +80,19 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
+    /**
+     * 管理员添加用户
+     *
+     * @param user
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Response usersAdd(User user) throws Exception {
+        Response<User> response = new Response<>();
+        User re = userMapper.save(user);
+        response.setData(re);
+        return response;
+    }
+
 }

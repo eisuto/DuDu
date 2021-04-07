@@ -46,4 +46,12 @@ public interface UserService {
      * @throws Exception
      */
     Response usersList(PageBase page) throws Exception;
+
+    /**
+     * 管理员添加用户
+     * @param user
+     * @return
+     * @throws Exception
+     */
+    Response usersAdd(User user) throws Exception;
 }
