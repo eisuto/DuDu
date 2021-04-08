@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
      * 注册
      */
     @Override
-    public Response register(User user) throws Exception {
+    public Response register(User user) {
         Response<User> response = new Response<>();
 
         User re = userMapper.save(user);
@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
      * 登录
      */
     @Override
-    public Response login(User user) throws Exception {
+    public Response login(User user) {
         Response<User> response = new Response<>();
         User re = userMapper.findByPasswordAndName(user.getPassword(), user.getName());
         if (re == null) {
@@ -58,10 +58,9 @@ public class UserServiceImpl implements UserService {
      *
      * @param user 信息
      * @return
-     * @throws Exception
      */
     @Override
-    public Response space(User user) throws Exception {
+    public Response space(User user) {
         return null;
     }
 
@@ -70,12 +69,11 @@ public class UserServiceImpl implements UserService {
      *
      * @param page 分页
      * @return
-     * @throws Exception
      */
     @Override
-    public Response usersList(PageBase page) throws Exception {
+    public Response usersList(PageBase page) {
         Response<Page> response = new Response<>();
-        Page<User> users = userMapper.findAll(PageRequest.of(page.getNumber(), page.getSize()));
+        Page<User> users = userMapper.findAll(PageRequest.of(page.getNumber()-1, page.getSize()));
         response.setData(users);
         return response;
     }
@@ -85,10 +83,9 @@ public class UserServiceImpl implements UserService {
      *
      * @param user
      * @return
-     * @throws Exception
      */
     @Override
-    public Response usersAdd(User user) throws Exception {
+    public Response usersAdd(User user) {
         Response<User> response = new Response<>();
         User re = userMapper.save(user);
         response.setData(re);
