@@ -21,7 +21,7 @@ public class HomeController {
     HomeService homeService;
 
     @RequestMapping("/data")
-    public Response data() {
+    public Response<?> data() {
         return homeService.data();
     }
 }

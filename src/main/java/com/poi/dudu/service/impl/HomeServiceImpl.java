@@ -23,7 +23,7 @@ public class HomeServiceImpl implements HomeService {
      * 主页数据
      */
     @Override
-    public Response data() {
+    public Response<?> data() {
         Home home = new Home();
         List<Recommend> recommendList = recommendRepository.findAll();
         home.setRecommendList(recommendList);

@@ -2,6 +2,7 @@ package com.poi.dudu.base;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -9,7 +10,8 @@ import java.util.Vector;
  * @author eisuto
  */
 @Data
-public class Response<T> {
+public class Response<T> implements Serializable {
+    private static final long serialVersionUID = 3886133510113334083L;
     private Integer code;
     private String msg;
     private T data;
@@ -35,5 +37,4 @@ public class Response<T> {
         this.code = 400;
         this.msg = "操作失败";
     }
-
 }

@@ -10,5 +10,5 @@ public interface HomeService {
     /**
      * 主页数据
      */
-    public Response data();
+    Response data();
 }
