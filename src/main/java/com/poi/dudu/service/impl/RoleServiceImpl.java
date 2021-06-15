@@ -1,8 +1,7 @@
 package com.poi.dudu.service.impl;
 
-import com.poi.dudu.base.Response;
 import com.poi.dudu.domain.Role;
-import com.poi.dudu.mapper.RoleMapper;
+import com.poi.dudu.mapper.RoleRepository;
 import com.poi.dudu.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,7 +19,7 @@ import org.springframework.stereotype.Service;
 public class RoleServiceImpl implements RoleService {
 
     @Autowired
-    RoleMapper roleMapper;
+    RoleRepository roleRepository;
 
     /**
      * 查询角色
@@ -30,7 +29,7 @@ public class RoleServiceImpl implements RoleService {
      */
     @Override
     public Role selectRoleById(Long id) {
-        return roleMapper.findById(id).orElse(null);
+        return roleRepository.findById(id).orElse(null);
     }
 
     /**
@@ -41,8 +40,10 @@ public class RoleServiceImpl implements RoleService {
      */
     @Override
     public Page<Role> selectRoleList(Role role) {
-        Page<Role> roles = roleMapper.findAll(PageRequest.of(role.getPageNum()-1,role.getPageSize()));
-        return roles;
+//        //Repository
+//        Page<Role> roles = roleRepository.findAll(null);
+//        return roles;
+        return null;
     }
 
     /**
@@ -53,7 +54,7 @@ public class RoleServiceImpl implements RoleService {
      */
     @Override
     public boolean insertRole(Role role) {
-        Role r = roleMapper.save(role);
+        Role r = roleRepository.save(role);
         return r != null;
     }
 
@@ -65,7 +66,7 @@ public class RoleServiceImpl implements RoleService {
      */
     @Override
     public boolean updateRole(Role role) {
-        Role r = roleMapper.save(role);
+        Role r = roleRepository.save(role);
         return r != null;
     }
 
@@ -77,7 +78,7 @@ public class RoleServiceImpl implements RoleService {
      */
     @Override
     public void deleteRoleByIds(Long[] ids) {
-        roleMapper.deleteByIdIn(ids);
+        roleRepository.deleteByIdIn(ids);
     }
 
     /**
@@ -88,7 +89,7 @@ public class RoleServiceImpl implements RoleService {
      */
     @Override
     public void deleteRoleById(Long id) {
-        roleMapper.deleteById(id);
+        roleRepository.deleteById(id);
     }
 }
 

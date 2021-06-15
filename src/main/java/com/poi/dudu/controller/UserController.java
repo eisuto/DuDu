@@ -1,16 +1,13 @@
 package com.poi.dudu.controller;
 
-import com.poi.dudu.base.PageBase;
+import com.poi.dudu.base.BaseRequest;
 import com.poi.dudu.base.Response;
 import com.poi.dudu.domain.User;
-import com.poi.dudu.mapper.UserMapper;
 import com.poi.dudu.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import java.sql.ResultSet;
-import java.util.List;
 
 /**
  * 用户相关 控制器
@@ -57,16 +54,29 @@ public class UserController {
      * 获取用户列表
      */
     @GetMapping("/users")
-    public Response usersList(PageBase page) throws Exception {
-        return userService.usersList(page);
+    public Response usersList(BaseRequest base) throws Exception {
+        return userService.usersList(base);
     }
 
     /**
-     * 管理员添加用户
+     * 后台 - 添加
      */
     @PostMapping("/users")
     public Response userAdd(@RequestBody User user) throws Exception {
         return userService.usersAdd(user);
+    }
+
+    /**
+     * 后台 - 批量删除
+     */
+    @DeleteMapping("/users/{ids}")
+    public Response userDel(@PathVariable Long[] ids) throws Exception {
+        Response response = new Response<>();
+        int i = userService.userDel(ids);
+        if (i == 0) {
+            response.fail();
+        }
+        return response;
     }
 
 

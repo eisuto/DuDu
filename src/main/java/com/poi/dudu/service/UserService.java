@@ -1,10 +1,8 @@
 package com.poi.dudu.service;
 
-import com.poi.dudu.base.PageBase;
+import com.poi.dudu.base.BaseRequest;
 import com.poi.dudu.base.Response;
 import com.poi.dudu.domain.User;
-
-import javax.servlet.http.HttpSession;
 
 /**
  * 用户相关 服务层
@@ -45,13 +43,21 @@ public interface UserService {
      * @return
      * @throws Exception
      */
-    Response usersList(PageBase page) throws Exception;
+    Response usersList(BaseRequest page) throws Exception;
 
     /**
-     * 管理员添加用户
+     * 管理员 添加
      * @param user
      * @return
      * @throws Exception
      */
     Response usersAdd(User user) throws Exception;
+
+    /**
+     * 管理员 删除
+     * @param ids
+     * @return
+     * @throws Exception
+     */
+    Integer userDel(Long[] ids) throws Exception;
 }

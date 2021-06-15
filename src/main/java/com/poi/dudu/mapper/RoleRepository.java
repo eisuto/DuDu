@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  * @author eisuto
  */
 @Repository
-public interface RoleMapper extends JpaRepository<Role, Long> {
+public interface RoleRepository extends JpaRepository<Role, Long> {
     /**
      * 批量删除
      * @param ids

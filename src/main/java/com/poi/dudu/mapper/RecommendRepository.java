@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * @author eisuto
  */
 @Repository
-public interface RecommendMapper extends JpaRepository<Recommend, Long> {
+public interface RecommendRepository extends JpaRepository<Recommend, Long> {
 }
