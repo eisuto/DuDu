@@ -10,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 
 /**
  * 用户相关业务 服务层实现
@@ -18,14 +20,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
+    @Resource
     UserRepository userRepository;
 
     /**
      * 注册
      */
     @Override
-    public Response register(User user) {
+    public Response<?> register(User user) {
         Response<User> response = new Response<>();
 
         User re = userRepository.save(user);
@@ -37,7 +39,7 @@ public class UserServiceImpl implements UserService {
      * 登录
      */
     @Override
-    public Response login(User user) {
+    public Response<?> login(User user) {
         Response<User> response = new Response<>();
         User re = userRepository.findByPasswordAndName(user.getPassword(), user.getName());
         if (re == null) {
@@ -55,7 +57,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public Response space(User user) {
+    public Response<?> space(User user) {
         return null;
     }
 
@@ -66,7 +68,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public Response usersList(BaseRequest page) {
+    public Response<?> usersList(BaseRequest page) {
         Response<Page> response = new Response<>();
         Page<User> users = userRepository.findAll(PageRequest.of(page.getNumber()-1, page.getSize()));
         response.setData(users);
@@ -80,7 +82,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public Response usersAdd(User user) {
+    public Response<?> usersAdd(User user) {
         Response<User> response = new Response<>();
         User re = userRepository.save(user);
         response.setData(re);

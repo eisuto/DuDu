@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  * @author eisuto
  */
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class UserController {
 
     @Resource
@@ -25,7 +25,7 @@ public class UserController {
      * 注册
      */
     @RequestMapping("/register")
-    public Response register(User user) throws Exception {
+    public Response<?> register(User user) throws Exception {
         return userService.register(user);
     }
 
@@ -33,8 +33,8 @@ public class UserController {
      * 登录
      */
     @RequestMapping("/login")
-    public Response login(User user, HttpSession session) throws Exception {
-        Response response = userService.login(user);
+    public Response<?> login(User user, HttpSession session) throws Exception {
+        Response<?> response = userService.login(user);
         if (response.getData() != null) {
             User userInfo = (User) response.getData();
             session.setAttribute("userId", userInfo.getId());
@@ -46,7 +46,7 @@ public class UserController {
      * 空间
      */
     @RequestMapping("/space")
-    public Response space(User user) throws Exception {
+    public Response<?> space(User user) throws Exception {
         return userService.space(user);
     }
 

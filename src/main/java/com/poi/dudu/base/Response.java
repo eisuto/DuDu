@@ -23,7 +23,7 @@ public class Response<T> implements Serializable {
     }
 
     public Response(T data) {
-        this(0, "操作成功", data);
+        this(200, "操作成功", data);
     }
 
     public Response() {

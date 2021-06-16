@@ -3,6 +3,7 @@ package com.poi.dudu.controller;
 import com.poi.dudu.base.Response;
 import com.poi.dudu.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,8 +21,13 @@ public class HomeController {
     @Resource
     HomeService homeService;
 
-    @RequestMapping("/data")
+    @PostMapping("/data")
     public Response<?> data() {
         return homeService.data();
+    }
+
+    @PostMapping("/addTypeToAnime")
+    public Response<?> addTypeToAnime(){
+        return homeService.addTypeToAnime();
     }
 }
