@@ -25,9 +25,4 @@ public class HomeController {
     public Response<?> data() {
         return homeService.data();
     }
-
-    @PostMapping("/addTypeToAnime")
-    public Response<?> addTypeToAnime(){
-        return homeService.addTypeToAnime();
-    }
 }

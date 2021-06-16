@@ -14,9 +14,5 @@ public interface HomeService {
      */
     Response<?> data();
 
-    /**
-     * 给动画添加类型
-     * @return
-     */
-    Response<?> addTypeToAnime();
+
 }

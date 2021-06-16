@@ -32,11 +32,10 @@ public class Anime {
     private String nameJapanese;
 
     /**
-     * 简介
+     * 图片路径
      */
-    @Lob
-    @Column(columnDefinition="text")
-    private String summary;
+    @Column
+    private String imgPath;
 
     /**
      * 类型 - 多对多
@@ -72,5 +71,12 @@ public class Anime {
      */
     private String author;
 
+
+    /**
+     * 简介
+     */
+    @Lob
+    @Column(columnDefinition="text")
+    private String summary;
 
 }
