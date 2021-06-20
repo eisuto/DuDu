@@ -8,9 +8,24 @@ import java.util.List;
 
 /**
  * 首页数据
+ *
  * @author eisut
  */
 @Data
 public class Home {
-    public List<Recommend> recommendList;
+    /**
+     * 推荐动画列表
+     */
+    public List<Anime> recommendList;
+
+    /**
+     * 周放送列表
+     */
+    public List<List<Anime>> liveList;
+
+
+    /**
+     * 排行榜
+     */
+    public List<Anime> leaderboard;
 }

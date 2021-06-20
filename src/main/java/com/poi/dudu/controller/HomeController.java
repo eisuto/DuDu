@@ -28,7 +28,7 @@ public class HomeController {
     HomeService homeService;
 
 
-    @ApiOperation(value = "获取首页数据", notes = "")
+    @ApiOperation(value = "获取首页数据", notes = "目前只有推荐数据")
     @GetMapping("/data")
     public Response<?> data() {
         return homeService.data();

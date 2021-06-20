@@ -23,8 +23,9 @@ import java.util.Set;
 @Service
 public class HomeServiceImpl implements HomeService {
 
+
     @Autowired
-    RecommendRepository recommendRepository;
+    AnimeRepository animeRepository;
 
 
 
@@ -34,8 +35,7 @@ public class HomeServiceImpl implements HomeService {
     @Override
     public Response<?> data() {
         Home home = new Home();
-        List<Recommend> recommendList = recommendRepository.findAll();
-        home.setRecommendList(recommendList);
+        home.setRecommendList(animeRepository.recommendAnime());
         return new Response<>(home);
     }
 
