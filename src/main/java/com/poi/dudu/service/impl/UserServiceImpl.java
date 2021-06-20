@@ -5,7 +5,6 @@ import com.poi.dudu.base.Response;
 import com.poi.dudu.domain.User;
 import com.poi.dudu.mapper.UserRepository;
 import com.poi.dudu.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -37,17 +36,11 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 登录
+     * @return
      */
     @Override
-    public Response<?> login(User user) {
-        Response<User> response = new Response<>();
-        User re = userRepository.findByPasswordAndName(user.getPassword(), user.getName());
-        if (re == null) {
-            response.fail();
-        } else {
-            response.setData(re);
-        }
-        return response;
+    public User login(User user) {
+        return userRepository.findByPasswordAndName(user.getPassword(), user.getName());
     }
 
     /**

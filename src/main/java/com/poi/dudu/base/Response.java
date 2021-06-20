@@ -1,6 +1,7 @@
 package com.poi.dudu.base;
 
 import lombok.Data;
+import org.springframework.http.ResponseEntity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -36,5 +37,9 @@ public class Response<T> implements Serializable {
     public void fail(){
         this.code = 400;
         this.msg = "操作失败";
+    }
+
+    public Response<?> success(T data){
+        return new Response<>(data);
     }
 }

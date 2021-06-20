@@ -4,6 +4,10 @@ import com.poi.dudu.base.BaseRequest;
 import com.poi.dudu.base.Response;
 import com.poi.dudu.domain.User;
 import com.poi.dudu.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,6 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author eisuto
  */
+@Api(tags = "用户相关")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -22,25 +27,31 @@ public class UserController {
     UserService userService;
 
     /**
+     * 登录
+     */
+    @ApiOperation(value = "登录", notes = "用户登录")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "name", value = "用户名", required = true),
+            @ApiImplicitParam(name = "password", value = "密码", required = true),
+    })
+    @PostMapping("/login")
+    public Response<?> login(User user) throws Exception {
+        return new Response<>(userService.login(user));
+    }
+
+    /**
      * 注册
      */
+    @ApiOperation(value = "注册", notes = "用户注册")
+        @ApiImplicitParams({
+            @ApiImplicitParam(name = "name", value = "打印的文件名", required = true),
+    })
     @RequestMapping("/register")
     public Response<?> register(User user) throws Exception {
         return userService.register(user);
     }
 
-    /**
-     * 登录
-     */
-    @RequestMapping("/login")
-    public Response<?> login(User user, HttpSession session) throws Exception {
-        Response<?> response = userService.login(user);
-        if (response.getData() != null) {
-            User userInfo = (User) response.getData();
-            session.setAttribute("userId", userInfo.getId());
-        }
-        return response;
-    }
+
 
     /**
      * 空间

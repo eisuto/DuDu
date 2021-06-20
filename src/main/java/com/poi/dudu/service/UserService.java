@@ -17,16 +17,16 @@ public interface UserService {
      * @return
      * @throws Exception
      */
-    Response register(User user) throws Exception;
+    Response<?> register(User user) throws Exception;
 
     /**
      * 登录
      *
      * @param user 信息
-     * @return
+     * @return info
      * @throws Exception
      */
-    Response login(User user) throws Exception;
+    User login(User user) throws Exception;
 
     /**
      * 空间
@@ -35,7 +35,7 @@ public interface UserService {
      * @return
      * @throws Exception
      */
-    Response space(User user) throws Exception;
+    Response<?> space(User user) throws Exception;
 
     /**
      * 用户列表
@@ -43,7 +43,7 @@ public interface UserService {
      * @return
      * @throws Exception
      */
-    Response usersList(BaseRequest page) throws Exception;
+    Response<?> usersList(BaseRequest page) throws Exception;
 
     /**
      * 管理员 添加
@@ -51,7 +51,7 @@ public interface UserService {
      * @return
      * @throws Exception
      */
-    Response usersAdd(User user) throws Exception;
+    Response<?> usersAdd(User user) throws Exception;
 
     /**
      * 管理员 删除
