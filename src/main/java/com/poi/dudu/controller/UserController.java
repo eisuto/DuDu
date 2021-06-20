@@ -29,14 +29,19 @@ public class UserController {
     /**
      * 登录
      */
-    @ApiOperation(value = "登录", notes = "用户登录")
+    @ApiOperation(value = "登录", notes = "手机号、邮箱、用户名均可")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "name", value = "用户名", required = true),
+            @ApiImplicitParam(name = "name", value = "手机号、邮箱、用户名", required = true),
             @ApiImplicitParam(name = "password", value = "密码", required = true),
     })
     @PostMapping("/login")
     public Response<?> login(User user) throws Exception {
-        return new Response<>(userService.login(user));
+        User resUser = userService.login(user);
+        Response<?> response = new Response<>(resUser);
+        if(resUser == null){
+            response.fail();
+        }
+        return response;
     }
 
     /**
@@ -44,22 +49,20 @@ public class UserController {
      */
     @ApiOperation(value = "注册", notes = "用户注册")
         @ApiImplicitParams({
-            @ApiImplicitParam(name = "name", value = "打印的文件名", required = true),
+                @ApiImplicitParam(name = "name", value = "用户名", required = true),
+                @ApiImplicitParam(name = "password", value = "密码", required = true),
     })
-    @RequestMapping("/register")
+    @PostMapping("/register")
     public Response<?> register(User user) throws Exception {
-        return userService.register(user);
+        User resUser = userService.register(user);
+        Response<?> response = new Response<>(resUser);
+        if(resUser == null){
+            response.fail();
+        }
+        return response;
     }
 
 
-
-    /**
-     * 空间
-     */
-    @RequestMapping("/space")
-    public Response<?> space(User user) throws Exception {
-        return userService.space(user);
-    }
 
     /**
      * 获取用户列表

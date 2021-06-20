@@ -24,14 +24,14 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 注册
+     * @return
      */
     @Override
-    public Response<?> register(User user) {
-        Response<User> response = new Response<>();
-
-        User re = userRepository.save(user);
-        response.setData(re);
-        return response;
+    public User register(User user) {
+        if(userRepository.checkExist(user.getName())==null){
+            return userRepository.save(user);
+        }
+        return null;
     }
 
     /**
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User login(User user) {
-        return userRepository.findByPasswordAndName(user.getPassword(), user.getName());
+        return userRepository.login(user.getPassword(), user.getName());
     }
 
     /**

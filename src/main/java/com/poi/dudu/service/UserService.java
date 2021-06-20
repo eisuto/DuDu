@@ -17,7 +17,7 @@ public interface UserService {
      * @return
      * @throws Exception
      */
-    Response<?> register(User user) throws Exception;
+    User register(User user) throws Exception;
 
     /**
      * 登录
