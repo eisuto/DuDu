@@ -11,6 +11,9 @@ import com.poi.dudu.mapper.TypeRepository;
 import com.poi.dudu.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -35,7 +38,9 @@ public class HomeServiceImpl implements HomeService {
     @Override
     public Response<?> data() {
         Home home = new Home();
-        home.setRecommendList(animeRepository.recommendAnime());
+        Pageable pageable = PageRequest.of(0, 10);
+        Page<Anime> repositoryAll = animeRepository.findAll(pageable);
+        home.setRecommendList(repositoryAll.toList()    );
         return new Response<>(home);
     }
 

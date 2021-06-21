@@ -14,11 +14,10 @@ public interface AnimeRepository extends JpaRepository<Anime, Long>, JpaSpecific
 
     Anime findOneByNameChinese(String name);
 
-    /**
-     * 推荐动画 随机10条
-     */
-    @Query(nativeQuery=true,value = "select * from `anime` order by rand() limit 10")
-    List<Anime> recommendAnime();
+//    /**
+//     * 推荐动画 随机10条
+//     */
+//    List<Anime> findFirstByOrderBy();
 
 
 }

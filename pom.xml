@@ -76,6 +76,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.75</version>
         </dependency>
+<!--        解决jackson多对多关系的循环引用-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-hibernate5</artifactId>
+            <version>2.10.1</version>
+        </dependency>
 
     </dependencies>
 

@@ -1,5 +1,9 @@
 package com.poi.dudu.domain;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,6 +18,7 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "anime")
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
 public class Anime {
     @Id
     @GeneratedValue
@@ -40,6 +45,7 @@ public class Anime {
     /**
      * 类型 - 多对多
      */
+
     @ManyToMany(targetEntity = Type.class, cascade = CascadeType.ALL)
     @JoinTable(name = "anime_type",
             joinColumns = {@JoinColumn(name = "anime_id", referencedColumnName = "id")},

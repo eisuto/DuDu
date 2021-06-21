@@ -69,7 +69,7 @@ public class UserController {
      * 获取验证码
      */
     @ApiOperation(value = "获取验证码", notes = "此验证码用于注册")
-    @GetMapping
+    @GetMapping("/getVerifyCode")
     public Response<?> getVerifyCode(){
         return new Response<>();
     }
