@@ -28,8 +28,11 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User register(User user) {
-        if(userRepository.checkExist(user.getName())==null){
-            return userRepository.save(user);
+
+        if(user.getVerifyCode().equals("1234")){
+            if(userRepository.checkExist(user.getName())==null){
+                return userRepository.save(user);
+            }
         }
         return null;
     }

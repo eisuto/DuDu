@@ -48,4 +48,6 @@ public class User {
     @UpdateTimestamp
     @Column
     private Date loginTime;
+
+    private String verifyCode;
 }

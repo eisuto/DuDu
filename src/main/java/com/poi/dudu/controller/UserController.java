@@ -12,13 +12,15 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 用户相关 控制器
  *
  * @author eisuto
  */
-@Api(tags = "用户相关")
+@Api(tags = "用户相关（登录注册在此）")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -49,7 +51,8 @@ public class UserController {
      */
     @ApiOperation(value = "注册", notes = "用户注册")
         @ApiImplicitParams({
-                @ApiImplicitParam(name = "name", value = "用户名", required = true),
+                @ApiImplicitParam(name = "email", value = "邮箱", required = true),
+                @ApiImplicitParam(name = "verifyCode", value = "验证码（默认传1234）", required = true),
                 @ApiImplicitParam(name = "password", value = "密码", required = true),
     })
     @PostMapping("/register")
@@ -60,6 +63,15 @@ public class UserController {
             response.fail();
         }
         return response;
+    }
+
+    /**
+     * 获取验证码
+     */
+    @ApiOperation(value = "获取验证码", notes = "此验证码用于注册")
+    @GetMapping
+    public Response<?> getVerifyCode(){
+        return new Response<>();
     }
 
 
