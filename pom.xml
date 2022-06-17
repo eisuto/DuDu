@@ -74,7 +74,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.75</version>
+            <version>1.2.83</version>
         </dependency>
 <!--        解决jackson多对多关系的循环引用-->
         <dependency>
